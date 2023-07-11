@@ -1,0 +1,190 @@
+Started GET "/" for 127.0.0.1 at 2023-07-11 08:58:50 +0600
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 4 pending migrations:
+
+20230711013900_create_companies.rb
+20230711014411_create_job_postings.rb
+20230711024013_create_bewerbungs.rb
+20230711025606_create_stages.rb
+
+
+):
+  
+activerecord (7.0.5) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.5) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.5) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.5) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.5) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.5) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.5) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.5) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.5) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCompanies (20230711013900)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "companies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "headquarter" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230711013900"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJobPostings (20230711014411)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "job_postings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "company_id" integer NOT NULL, "position" varchar, "category" integer, "city" varchar, "country" varchar, "description" text, "language" integer, "source" varchar, "posted_at" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_d5f1c58418"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_job_postings_on_company_id" ON "job_postings" ("company_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230711014411"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBewerbungs (20230711024013)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "bewerbungs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "job_posting_id" integer NOT NULL, "resume" varchar, "cover_letter" varchar, "files" varchar, "notes" text, "status" integer, "applied_at" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_db90106695"
+FOREIGN KEY ("job_posting_id")
+  REFERENCES "job_postings" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_bewerbungs_on_job_posting_id" ON "bewerbungs" ("job_posting_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230711024013"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStages (20230711025606)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "stages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "bewerbung_id" integer NOT NULL, "name" integer, "status" integer, "scheduled_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_df452dae5c"
+FOREIGN KEY ("bewerbung_id")
+  REFERENCES "bewerbungs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_stages_on_bewerbung_id" ON "stages" ("bewerbung_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230711025606"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-07-11 02:59:13.008079"], ["updated_at", "2023-07-11 02:59:13.008079"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-07-11 08:59:26 +0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ravshan/.local/share/gem/ruby/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ravshan/.local/share/gem/ruby/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 726)
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 7728)
+
+
+Started GET "/" for 127.0.0.1 at 2023-07-11 09:39:17 +0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ravshan/.local/share/gem/ruby/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ravshan/.local/share/gem/ruby/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 388)
+Completed 200 OK in 3ms (Views: 2.2ms | Allocations: 1478)
+
+
+Started GET "/" for 127.0.0.1 at 2023-07-11 09:39:19 +0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ravshan/.local/share/gem/ruby/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ravshan/.local/share/gem/ruby/3.0.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 1ms (Views: 0.7ms | Allocations: 304)
+
+
+Started GET "/companies" for 127.0.0.1 at 2023-07-11 09:39:24 +0600
+  
+ActionController::RoutingError (No route matches [GET] "/companies"):
+  
+Started GET "/companies/index" for 127.0.0.1 at 2023-07-11 09:39:28 +0600
+Processing by CompaniesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering companies/index.html.erb within layouts/application
+  Rendered companies/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 125)
+  Rendered layout layouts/application.html.erb (Duration: 229.5ms | Allocations: 92379)
+Completed 200 OK in 233ms (Views: 231.7ms | Allocations: 93668)
+
+
+Started GET "/companies/index" for 127.0.0.1 at 2023-07-11 09:43:49 +0600
+  
+ActionController::RoutingError (No route matches [GET] "/companies/index"):
+  
+Started GET "/companies/i" for 127.0.0.1 at 2023-07-11 09:43:50 +0600
+  
+ActionController::RoutingError (No route matches [GET] "/companies/i"):
+  
+Started GET "/companies/" for 127.0.0.1 at 2023-07-11 09:43:53 +0600
+Processing by CompaniesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering companies/index.html.erb within layouts/application
+  Rendered companies/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 14186)
+Completed 200 OK in 15ms (Views: 14.0ms | Allocations: 15071)
+
+
+Started GET "/companies/" for 127.0.0.1 at 2023-07-11 09:46:10 +0600
+Processing by CompaniesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering companies/index.html.erb within layouts/application
+  Rendered companies/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 14164)
+Completed 200 OK in 39ms (Views: 38.6ms | Allocations: 15049)
+
+
+Started GET "/bewerbungs" for 127.0.0.1 at 2023-07-11 09:46:13 +0600
+Processing by BewerbungsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bewerbungs/index.html.erb within layouts/application
+  Rendered bewerbungs/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 128)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2820)
+Completed 200 OK in 6ms (Views: 5.1ms | Allocations: 3827)
+
+
+Started GET "/bewerbungs/new" for 127.0.0.1 at 2023-07-11 09:46:30 +0600
+Processing by BewerbungsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bewerbungs/new.html.erb within layouts/application
+  Rendered bewerbungs/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2521)
+Completed 200 OK in 4ms (Views: 4.0ms | Allocations: 2918)
+
+
+Started GET "/bewerbungs/show" for 127.0.0.1 at 2023-07-11 09:46:33 +0600
+Processing by BewerbungsController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering bewerbungs/show.html.erb within layouts/application
+  Rendered bewerbungs/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2521)
+Completed 200 OK in 4ms (Views: 3.6ms | Allocations: 2887)
+
+
