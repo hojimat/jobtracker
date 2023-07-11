@@ -2,4 +2,4 @@
 
 ### Model Architecture
 
-![UML]('dev/classdiagram.svg')
+<img src='dev/classdiagram.svg' />
