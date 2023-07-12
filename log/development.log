@@ -188,3 +188,23 @@ Processing by BewerbungsController#show as HTML
 Completed 200 OK in 4ms (Views: 3.6ms | Allocations: 2887)
 
 
+Started GET "/companies" for 127.0.0.1 at 2023-07-12 11:02:31 +0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering companies/index.html.erb within layouts/application
+  Rendered companies/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 445)
+  Rendered layout layouts/application.html.erb (Duration: 207.3ms | Allocations: 92635)
+Completed 200 OK in 216ms (Views: 209.4ms | ActiveRecord: 0.0ms | Allocations: 99383)
+
+
+Started GET "/companies" for 127.0.0.1 at 2023-07-12 11:07:11 +0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering companies/index.html.erb within layouts/application
+  Rendered companies/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 445)
+  Rendered layout layouts/application.html.erb (Duration: 98.0ms | Allocations: 53003)
+Completed 200 OK in 107ms (Views: 100.3ms | ActiveRecord: 0.0ms | Allocations: 59753)
+
+
